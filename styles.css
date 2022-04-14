@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primaryColor: rgb(38, 192, 171);
+  --veryDarkCyan: rgb(0, 73, 77);
+  --darkGrayishCyan: rgb(94, 122, 125);
+  --grayishCyan: rgb(127, 156, 159);
+  --lightGrayishCyan: rgb(197, 228, 231);
+  --mediumLightGrayishCyan: rgb(226, 246, 248);
+  --veryLightGrayishCyan: rgb(244, 250, 250);
+  --white: #ffffff;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  background-color: var(--lightGrayishCyan);
+}
+
+p,
+label {
+  font-size: 18px;
+}
+
+label {
+  color: var(--veryDarkCyan);
+  margin-bottom: 5px;
+}
+
+input {
+  font-size: 24px;
+  border: none;
+  outline: none;
+  background-color: var(--mediumLightGrayishCyan);
+  color: var(--veryDarkCyan);
+  height: 40px;
+  width: 100%;
+  text-align: right;
+  padding: 0 10px;
+}
+
+input:focus {
+  border: 2px solid var(--primaryColor);
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-family: "Space Mono", monospace;
+}
+
+.dark-bg-btn {
+  background-color: var(--veryDarkCyan);
+  color: var(--veryLightGrayishCyan);
+}
+
+.dark-bg-btn:hover {
+  background-color: var(--primaryColor);
+  color: var(--veryDarkCyan);
+}
+
+.light-bg-btn {
+  background-color: var(--veryLightGrayishCyan);
+  color: var(--veryDarkCyan);
+}
+
+.light-bg-btn:hover {
+  border: 2px solid var(--primaryColor);
+}
+
+.container {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.calculator-container {
+  background-color: var(--white);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 20px;
+}
+
+.bill,
+.tip,
+.num-of-people {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ------------------- BILL SECTION ----------------------------- */
+.bill {
+  grid-area: bill-area;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------------------ TIP SECTION ------------------------------ */
+
+.tip {
+  grid-area: tip-area;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.tip-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+input::placeholder {
+  text-align: center;
+}
+
+/* ---------------------- NUMBER OF PEOPLE SECTION ------- */
+.num-of-people {
+  grid-area: customer-area;
+}
+
+/* ---------------------- DISPLAYING TOTAL BILL -------------------- */
+.bill-display {
+  grid-area: display-area;
+  background-color: var(--veryDarkCyan);
+  color: var(--veryLightGrayishCyan);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tip-amount,
+.total-amount {
+  color: var(--primaryColor);
+}
+
+.tip-display,
+.total-display {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.tip-display span,
+.total-display span {
+  font-size: 14px;
+  color: var(--primaryColor);
+  font-size: 24px;
+}
+
+#reset-btn {
+  background-color: var(--primaryColor);
+  color: var(--veryLightGrayishCyan);
+  width: 100%;
+}
+
+#reset-btn:hover {
+  background: var(--lightGrayishCyan);
+  color: var(--veryDarkCyan);
+}
+
+/* -------------------- Footer styles ----------------------------- */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  background-color: var(--veryDarkCyan);
+  color: var(--lightGrayishCyan);
+  padding: 20px;
+}
+.attribution a {
+  color: var(--primaryColor);
+}
+
+.input-error {
+  border: 2px solid orange;
+}
+
+.error-msg {
+  color: orange;
+}
+
+/*----------------- MEDIA QUERIES ------------------------- */
+@media screen and (min-width: 1366px) {
+  .container {
+    width: 60%;
+    margin: 50px auto 0 auto;
+  }
+
+  .calculator-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    border-radius: 30px;
+  }
+
+  .tip-buttons {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .bill-display {
+    height: 100%;
+  }
+
+  #reset-btn {
+    justify-content: end;
+  }
+}

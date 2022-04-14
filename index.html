@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <script type="module" src="/Js/app.js" defer></script>
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="/images/logo.svg" alt="" />
+      </div>
+
+      <div class="calculator-container">
+        <div class="calc-area">
+          <section class="bill">
+            <div class="section-title">
+              <label for="bill-amount">Bill Amount</label>
+              <p class="error-msg bill-amount" id="bill-amount-error"></p>
+            </div>
+            <input type="text" min="1" name="bill-amount" id="bill-amount" />
+          </section>
+
+          <section class="numcustomof-people">
+            <div class="section-title">
+              <label for="custocustomers">Number of People</label>
+              <p class="error-msg customers" id="customers-error"></p>
+            </div>
+            <input type="text" min="1" name="customers" id="customers" />
+          </section>
+
+          <section class="tip">
+            <div class="section-title">
+              <label>Select Tip %</label>
+              <p class="error-msg tip-rate"></p>
+            </div>
+
+            <div class="tip-buttons">
+              <button value="5" class="tip-button dark-bg-btn">5%</button>
+              <button value="10" class="tip-button dark-bg-btn">10%</button>
+              <button value="15" class="tip-button dark-bg-btn">15%</button>
+              <button value="25" class="tip-button dark-bg-btn">25%</button>
+              <button value="50" class="tip-button dark-bg-btn">50%</button>
+              <button value="custom" class="tip-button light-bg-btn"/>Custom</button>
+            </div>
+          </section>
+         
+        </div>
+
+        <div class="result-area">
+          <section class="bill-display">
+            <div>
+              <div class="tip-display">
+                <p>
+                  Tip Amount <br />/ per person
+                  <span></span>
+                </p>
+                <h1 class="tip-amount">
+                  R
+                  <span id="tip-amount">0.00</span>
+                </h1>
+              </div>
+
+              <div class="total-display">
+                <p>Total <br />/ per person<span></span></p>
+                <h1 class="total-amount">
+                  R
+                  <span id="total-amount">0.00</span>
+                </h1>
+              </div>
+            </div>
+
+            <button id="reset-btn">Reset</button>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https:github.com/PNkosi" target="_blank">Perfect Nkosi</a>.
+    </div> -->
+  </body>
+</html>
